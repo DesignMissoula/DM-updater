@@ -5,14 +5,14 @@
  * @package   GitHub_Updater
  * @author    Andy Fragen
  * @license   GPL-2.0+
- * @link      https://github.com/afragen/github-updater
+ * @link      https://github.com/DesignMissoula/DM-updater
  */
 
 /*
 Plugin Name:       DM Updater
 Plugin URI:        https://github.com/afragen/github-updater
 Description:       A plugin to automatically update Design Missoula Custom plugins and themes into WordPress. 
-Version:           2.7.3
+Version:           2.7.4
 Author:            Bradford Knowlton & Andy Fragen
 License:           GNU General Public License v2
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
@@ -32,7 +32,7 @@ if ( is_admin() && ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) ) {
 	if ( ! class_exists( 'GitHub_Updater' ) ) {
 		require_once 'includes/class-github-updater.php';
 		require_once 'includes/class-github-api.php';
-		// require_once 'includes/class-bitbucket-api.php';
+		require_once 'includes/class-bitbucket-api.php';
 	}
 	if ( ! class_exists( 'GitHub_Plugin_Updater' ) ) {
 		require_once 'includes/class-plugin-updater.php';
