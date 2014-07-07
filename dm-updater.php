@@ -12,8 +12,9 @@
 Plugin Name:       DM Updater
 Plugin URI:        https://github.com/afragen/github-updater
 Description:       A plugin to automatically update Design Missoula Custom plugins and themes into WordPress. 
-Version:           2.7.6
+Version:           2.7.7
 Author:            Bradford Knowlton & Andy Fragen
+Author URI: 	   http://bradknowlton.com/
 License:           GNU General Public License v2
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 Domain Path:       /languages
