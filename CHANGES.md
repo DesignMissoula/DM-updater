@@ -1,5 +1,9 @@
 ### ChangeLog for GitHub Updater
 
+#### 2.7.7
+
+* changed file header to link author names
+
 #### 2.7.5
 
 * rebranded for Design Missoula
