@@ -1,5 +1,9 @@
 ### ChangeLog for GitHub Updater
 
+#### 2.7.9
+
+* added 2.7.9 tag
+
 #### 2.7.7
 
 * changed file header to link author names
