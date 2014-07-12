@@ -1,5 +1,9 @@
 ### ChangeLog for GitHub Updater
 
+#### 2.8.0
+
+* added 2.7.9 tag
+
 #### 2.7.9
 
 * added 2.7.9 tag
