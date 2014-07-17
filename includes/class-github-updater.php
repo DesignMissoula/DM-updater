@@ -387,6 +387,11 @@ class GitHub_Updater {
 			foreach ( (array) $this->config as $github_repo ) {
 				if ( stristr( basename( $source ), $github_repo->repo ) ) {
 					$repo = $github_repo->repo;
+					
+					if( $upgrader->skin->theme_info->get_stylesheet() == $github_repo->folder ){
+						$folder = $github_repo->folder;
+						break;	
+					}	
 				}
 			}
 		}
@@ -401,10 +406,10 @@ class GitHub_Updater {
 			return $source;
 		}
 
-		if ( empty( $github_repo->folder ) ) { 
+		if ( empty( $folder ) ) { 
 			$corrected_source = trailingslashit( $remote_source ) . trailingslashit( $repo );	
 		}else{
-			$corrected_source = trailingslashit( $remote_source ) . trailingslashit( $github_repo->folder );	
+			$corrected_source = trailingslashit( $remote_source ) . trailingslashit( $folder );	
 		}
 		
 		$upgrader->skin->feedback(

@@ -99,8 +99,12 @@ class GitHub_Updater_GitHub_API extends GitHub_Updater {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_remote_info( $file ) {
-		$response = $this->get_transient( $file );
+	public function get_remote_info( $file, $theme = false ) {
+		if( empty( $theme->folder ) ){
+			$response = $this->get_transient( $file );	
+		}else{
+			$response = $this->get_transient( $file.$theme->folder );
+		}
 
 		if ( ! $response ) {
 			$response = $this->api( '/repos/:owner/:repo/contents/' . $file );

@@ -57,7 +57,7 @@ class GitHub_Theme_Updater extends GitHub_Updater {
 
 			$this->{$theme->type} = $theme;
 			$this->set_defaults( $theme->type );
-			if ( $repo_api->get_remote_info( 'style.css' ) ) {
+			if ( $repo_api->get_remote_info( 'style.css', $theme ) ) {
 				$repo_api->get_repo_meta();
 				$repo_api->get_remote_tag();
 				$repo_api->get_remote_changes( 'CHANGES.md' );
@@ -311,8 +311,10 @@ class GitHub_Theme_Updater extends GitHub_Updater {
 
 			$remote_is_newer = ( 1 === version_compare( $theme->remote_version, $theme->local_version ) );
 
-			if ( $remote_is_newer ) {
+			if ( $remote_is_newer && empty ( $theme->folder ) ) {
 				$data->response[ $theme->repo ] = $update;
+			} else if ( $remote_is_newer){
+				$data->response[ $theme->folder ] = $update;
 			} else { // up-to-date!
 				$data->up_to_date[ $theme->repo ]['rollback'] = $theme->rollback;
 				$data->up_to_date[ $theme->repo ]['response'] = $update;
