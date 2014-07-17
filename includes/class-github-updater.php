@@ -388,7 +388,7 @@ class GitHub_Updater {
 				if ( stristr( basename( $source ), $github_repo->repo ) ) {
 					$repo = $github_repo->repo;
 					
-					if( $upgrader->skin->theme_info->get_stylesheet() == $github_repo->folder ){
+					if( is_object($upgrader->skin->theme_info) && $upgrader->skin->theme_info->get_stylesheet() == $github_repo->folder ){
 						$folder = $github_repo->folder;
 						break;	
 					}	
